@@ -63,7 +63,7 @@ def ensure_model_file():
     r = requests.get(MODEL_URL, stream=True, timeout=300)
     r.raise_for_status()
 
-    tmp_path = MODEL_PATH.with_suffix(MODEL_PATH.suffix + ".tmp")
+    tmp_path = MODEL_PATH.with_suffix(MODEL_PATH.suffix + f".{os.getpid()}.tmp")
     with open(tmp_path, "wb") as f:
         for chunk in r.iter_content(chunk_size=1024 * 1024):
             if chunk:
