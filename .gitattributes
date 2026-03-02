@@ -1,1 +1,2 @@
+*.pkl filter=lfs diff=lfs merge=lfs -text
 glucose_model_v3.pkl filter=lfs diff=lfs merge=lfs -text
